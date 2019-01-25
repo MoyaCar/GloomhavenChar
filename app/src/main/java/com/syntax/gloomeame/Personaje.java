@@ -15,7 +15,7 @@ public class Personaje {
     private String name;
 
     @ColumnInfo(name = "job_class")
-    private int jobClass;
+    private String jobClass;
 
     @ColumnInfo(name = "level")
     private int level;
@@ -49,11 +49,11 @@ public class Personaje {
         this.name = name;
     }
 
-    public int getJobClass() {
+    public String getJobClass() {
         return jobClass;
     }
 
-    public void setJobClass(int jobClass) {
+    public void setJobClass(String jobClass) {
         this.jobClass = jobClass;
     }
 
