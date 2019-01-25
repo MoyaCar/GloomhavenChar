@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+<TextView
+    android:id="@+id/crear_nuevo_personaje"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Nuevo Personaje"
+    android:gravity="center_horizontal"
+
+    />
+    <TextView
+        android:id="@+id/cargar_lista_personajes"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Cargar Personaje"
+        android:gravity="center_horizontal"/>
+</LinearLayout>
