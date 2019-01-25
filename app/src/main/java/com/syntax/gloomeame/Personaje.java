@@ -3,13 +3,14 @@ package com.syntax.gloomeame;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 @Entity(tableName = "personajes_table")
 public class Personaje {
 
-    @PrimaryKey(autoGenerate = true)
-    private int cId;
 
+    @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "name")
     private String name;
 
@@ -112,3 +113,4 @@ public class Personaje {
         this.items = items;
     }
 }
+
