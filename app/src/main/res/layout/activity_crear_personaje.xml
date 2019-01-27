@@ -20,10 +20,28 @@
 
     </Spinner>
 
+    <Spinner
+        android:id="@+id/level_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Spinner>
+
+    <Spinner
+        android:id="@+id/hp_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Spinner>
+
+<Spinner
+    android:id="@+id/gold_spinner"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+</Spinner>
+
     <Button
         android:id="@+id/boton_crear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="crear" />
+
 
 </LinearLayout>

@@ -14,12 +14,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class CrearPersonaje extends AppCompatActivity {
-    Log log;
+
     EditText editNombre;
     Spinner jobSpinner;
+    Spinner nivelSpinner;
+    Spinner hpSpinner;
+    Spinner goldSpinner;
     Button botonCrear;
-    String cuchillera = "Cuchillera";
-    String tanque = "Tanque";
+
+    //
+  ListasParaSpinners listaSpinners = new ListasParaSpinners();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +36,18 @@ public class CrearPersonaje extends AppCompatActivity {
         //designacion de vistas
         editNombre = findViewById(R.id.nombre);
         jobSpinner = findViewById(R.id.spinner_job);
+        nivelSpinner = findViewById(R.id.level_spinner);
+        hpSpinner = findViewById(R.id.hp_spinner);
+        goldSpinner = findViewById(R.id.gold_spinner);
         botonCrear = findViewById(R.id.boton_crear);
 
         //Lista de profesiones para el spinner
         ArrayList<String> profesiones = new ArrayList<>();
-        profesiones.add(cuchillera);
-        profesiones.add(tanque);
+        profesiones.add(listaSpinners.cuchillera);
+        profesiones.add(listaSpinners.tanque);
+
+
+
 
 
         //genera Spinner con todas las profesiones disponibles.
@@ -55,6 +65,10 @@ public class CrearPersonaje extends AppCompatActivity {
             }
         });
 
+        //genera Spinner para asignar nivel del personaje
+
+
+
         //Ingresa todos los datos obtenidos al nuevo personaje.
         botonCrear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +76,12 @@ public class CrearPersonaje extends AppCompatActivity {
                 personaje.setName(editNombre.getText().toString());
 
 
+
                 //Asigna la clase del personaje segun la posicion del spinner.
-                if (jobSpinner.getSelectedItem() == tanque) {
-                    personaje.setJobClass(tanque);
+                if (jobSpinner.getSelectedItem() == listaSpinners.tanque) {
+                    personaje.setJobClass(listaSpinners.tanque);
                 } else {
-                    personaje.setJobClass(cuchillera);
+                    personaje.setJobClass(listaSpinners.cuchillera);
                 }
 
                 //Log para ver que esta creando al final de todoo.
