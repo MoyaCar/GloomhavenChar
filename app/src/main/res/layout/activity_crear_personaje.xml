@@ -7,38 +7,81 @@
     android:orientation="vertical"
     tools:context=".CrearPersonaje">
 
-    <EditText
-        android:id="@+id/nombre"
-        android:layout_width="match_parent"
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Nombre" />
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:hint="@string/nombre">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/nombre"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        style="@style/creacion_de_personaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Profesión" />
 
     <Spinner
         android:id="@+id/spinner_job"
+        style="@style/creacion_de_personaje"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_gravity="center"
+
+        >
 
     </Spinner>
 
+    <TextView
+        style="@style/creacion_de_personaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nivel" />
+
     <Spinner
         android:id="@+id/level_spinner"
+        style="@style/creacion_de_personaje"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Spinner>
+        ></Spinner>
+
+    <TextView
+        style="@style/creacion_de_personaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max HP" />
 
     <Spinner
         android:id="@+id/hp_spinner"
+        style="@style/creacion_de_personaje"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Spinner>
+        ></Spinner>
+
+    <TextView
+        style="@style/creacion_de_personaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oro Inicial" />
 
     <Spinner
         android:id="@+id/gold_spinner"
+        style="@style/creacion_de_personaje"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+        >
 
     </Spinner>
 
     <Button
         android:id="@+id/boton_crear"
+        style="@style/creacion_de_personaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="crear" />

@@ -1,5 +1,6 @@
 package com.syntax.gloomeame;
 
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 public class CrearPersonaje extends AppCompatActivity {
 
-    EditText editNombre;
+    TextInputEditText editNombre;
     Spinner jobSpinner;
     Spinner nivelSpinner;
     Spinner hpSpinner;
@@ -58,11 +59,18 @@ public class CrearPersonaje extends AppCompatActivity {
 
         int hp = 7;
         ArrayList<Integer> maxhp = new ArrayList<>();
-        while (hp < 21){
+        while (hp < 21) {
             maxhp.add(hp);
-            hp  = hp + 1;
+            hp = hp + 1;
         }
 
+        //lista de oro
+        int gold = 0;
+        ArrayList<Integer> oro = new ArrayList<>();
+        while (gold < 100) {
+            oro.add(gold);
+            gold += 5;
+        }
 
         //genera Spinner con todas las profesiones disponibles.
 
@@ -81,13 +89,11 @@ public class CrearPersonaje extends AppCompatActivity {
         });
 
 
+        //genera Spinner para asignar nivel, hp, oro del personaje
 
-        //genera Spinner para asignar nivel del personaje
-
-        nivelSpinner.setAdapter(new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, niveles));
-
-        hpSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, maxhp));
-
+        nivelSpinner.setAdapter(new ArrayAdapter<>(this,R.layout.single_spinner_layout, niveles));
+        hpSpinner.setAdapter(new ArrayAdapter<>(this, R.layout.single_spinner_layout, maxhp));
+        goldSpinner.setAdapter(new ArrayAdapter<>(this, R.layout.single_spinner_layout, oro));
 
         //Ingresa todos los datos obtenidos al nuevo personaje.
         botonCrear.setOnClickListener(new View.OnClickListener() {
@@ -106,11 +112,19 @@ public class CrearPersonaje extends AppCompatActivity {
                 //Asigna nivel
                 personaje.setLevel((Integer) nivelSpinner.getSelectedItem());
 
+                //Asigna Max HP
+                personaje.setMaxHp((Integer) hpSpinner.getSelectedItem());
+
+                //Asigna Oro
+                personaje.setActualGold((Integer) goldSpinner.getSelectedItem());
+
 
                 //Log para ver que esta creando al final de todoo.
-                Log.v("Character:  ", " Name: " + personaje.getName() + " job: " + personaje.getJobClass()+
-                " level: "+ personaje.getLevel());
+                Log.v("Character:  ", " Name: " + personaje.getName() + " job: " + personaje.getJobClass() +
+                        " level: " + personaje.getLevel() + " HP:" + personaje.getMaxHp() + " Gold: " + personaje.getActualGold());
             }
         });
     }
 }
+
+

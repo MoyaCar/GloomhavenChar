@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Gloomeame</string>
+    <string name="nombre">Nombre</string>
 </resources>
